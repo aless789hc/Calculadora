@@ -28,7 +28,14 @@ namespace Calculadora
                 int a = 0, b = 0, resultado = 0;
                 a = int.Parse(txtVariableA.Text);
                 b = Convert.ToInt32(txtVariableB.Text);
-                resultado = a + b;
+                if (rdSuma.Checked)
+                    resultado = a + b;
+                if (rdResta.Checked)
+                    resultado = a - b;
+                if(rdMultiplicacion.Checked)
+                resultado = a * b;
+                if (rdDivision.Checked)
+                    resultado = a / b;
                 MessageBox.Show("El resultado es: " + resultado.ToString(), "Sitema", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Reset();
             }

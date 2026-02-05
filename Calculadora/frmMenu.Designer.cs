@@ -35,6 +35,7 @@
             calculadoraSimpleToolStripMenuItem = new ToolStripMenuItem();
             ordnamientosToolStripMenuItem = new ToolStripMenuItem();
             burbujaToolStripMenuItem = new ToolStripMenuItem();
+            registroToolStripMenuItem = new ToolStripMenuItem();
             mnsPrincipal.SuspendLayout();
             SuspendLayout();
             // 
@@ -63,7 +64,7 @@
             // 
             // aplicacionesToolStripMenuItem
             // 
-            aplicacionesToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { calculadoraSimpleToolStripMenuItem, ordnamientosToolStripMenuItem });
+            aplicacionesToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { calculadoraSimpleToolStripMenuItem, ordnamientosToolStripMenuItem, registroToolStripMenuItem });
             aplicacionesToolStripMenuItem.Name = "aplicacionesToolStripMenuItem";
             aplicacionesToolStripMenuItem.Size = new Size(86, 20);
             aplicacionesToolStripMenuItem.Text = "Aplicaciones";
@@ -85,9 +86,16 @@
             // burbujaToolStripMenuItem
             // 
             burbujaToolStripMenuItem.Name = "burbujaToolStripMenuItem";
-            burbujaToolStripMenuItem.Size = new Size(180, 22);
+            burbujaToolStripMenuItem.Size = new Size(115, 22);
             burbujaToolStripMenuItem.Text = "Burbuja";
             burbujaToolStripMenuItem.Click += burbujaToolStripMenuItem_Click;
+            // 
+            // registroToolStripMenuItem
+            // 
+            registroToolStripMenuItem.Name = "registroToolStripMenuItem";
+            registroToolStripMenuItem.Size = new Size(180, 22);
+            registroToolStripMenuItem.Text = "Registro";
+            registroToolStripMenuItem.Click += registroToolStripMenuItem_Click;
             // 
             // frmMenu
             // 
@@ -113,5 +121,6 @@
         private ToolStripMenuItem calculadoraSimpleToolStripMenuItem;
         private ToolStripMenuItem ordnamientosToolStripMenuItem;
         private ToolStripMenuItem burbujaToolStripMenuItem;
+        private ToolStripMenuItem registroToolStripMenuItem;
     }
 }

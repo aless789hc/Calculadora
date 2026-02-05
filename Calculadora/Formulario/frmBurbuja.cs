@@ -28,7 +28,7 @@ namespace Calculadora
             dgvOrdenado.DataSource = ordenado;//deine el tamaño del DataGridView de acuerdo al arreglo
            
             //Llena el DataGrdView con los valores ordenados
-            for (int j = 0; j < ordenado.Length - 1; j++)
+            for (int j = 0; j < ordenado.Length ; j++)
             {
                 dgvOrdenado.Rows[j].Cells[0].Value = ordenado[j];
             }

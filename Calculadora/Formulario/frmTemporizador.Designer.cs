@@ -1,6 +1,6 @@
 ﻿namespace Calculadora.Formulario
 {
-    partial class lblHora
+    partial class frmTemporizador
     {
         /// <summary>
         /// Required designer variable.
@@ -29,19 +29,19 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            label1 = new Label();
+            lblHora = new Label();
             tmrHora = new System.Windows.Forms.Timer(components);
             SuspendLayout();
             // 
-            // label1
+            // lblHora
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Rockwell", 36F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(108, 76);
-            label1.Name = "label1";
-            label1.Size = new Size(285, 54);
-            label1.TabIndex = 0;
-            label1.Text = "00:00:00 x.x";
+            lblHora.AutoSize = true;
+            lblHora.Font = new Font("EngraversGothic BT", 36F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblHora.Location = new Point(65, 99);
+            lblHora.Name = "lblHora";
+            lblHora.Size = new Size(322, 51);
+            lblHora.TabIndex = 0;
+            lblHora.Text = "00:00:00 x.x";
             // 
             // tmrHora
             // 
@@ -49,21 +49,21 @@
             tmrHora.Interval = 1000;
             tmrHora.Tick += tmrHora_Tick;
             // 
-            // lblHora
+            // frmTemporizador
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(519, 208);
-            Controls.Add(label1);
-            Name = "lblHora";
-            Text = "Reloj";
+            ClientSize = new Size(458, 248);
+            Controls.Add(lblHora);
+            Name = "frmTemporizador";
+            Text = "Temporizador";
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Label label1;
+        private Label lblHora;
         private System.Windows.Forms.Timer tmrHora;
     }
 }

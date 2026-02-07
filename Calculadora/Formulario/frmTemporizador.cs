@@ -8,16 +8,16 @@ using System.Windows.Forms;
 
 namespace Calculadora.Formulario
 {
-    public partial class lblHora : Form
+    public partial class frmTemporizador : Form
     {
-        public lblHora()
+        public frmTemporizador()
         {
             InitializeComponent();
         }
 
         private void tmrHora_Tick(object sender, EventArgs e)
         {
-            lblHora.Text = DateTime.Now.ToLongString();
+            lblHora.Text = DateTime.Now.ToLongTimeString();//para poner la hora en el label shor(hora) y long(segundos)
         }
     }
 }

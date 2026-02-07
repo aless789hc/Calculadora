@@ -34,7 +34,8 @@ namespace Calculadora
 
         private void relojToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frm
+            frmTemporizador reloj = new frmTemporizador();
+            reloj.Show();
         }
     }
 }

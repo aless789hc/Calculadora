@@ -30,10 +30,30 @@ namespace Calculadora.Formulario
 
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (tabControl1.SelectedIndex ==1) {
+            if (tabControl1.SelectedIndex == 1)
+            {
+
                 dgvPersonas.DataSource = null;
                 dgvPersonas.DataSource = personas;
+                verificarRegistros();
             }
+        }
+
+        private void verificarRegistros()
+        {
+            if (personas.Count == 0)
+                btnEliminar.Enabled = false;
+            else btnEliminar.Enabled = true;
+
+
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            personas.RemoveAt(dgvPersonas.CurrentRow.Index);
+            dgvPersonas.DataSource = null;//limpia el data
+            dgvPersonas.DataSource = personas;// vuelve a llenar 
+            verificarRegistros();//verifica
         }
     }
 }

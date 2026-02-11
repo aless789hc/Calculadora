@@ -37,5 +37,11 @@ namespace Calculadora
             frmTemporizador reloj = new frmTemporizador();
             reloj.Show();
         }
+
+        private void editorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmEditor editor = new frmEditor();
+            editor.Show();
+        }
     }
 }

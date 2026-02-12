@@ -13,6 +13,7 @@ namespace Calculadora.Formulario
     {
         bool saved = false;
         string path = "";
+        string texto="";
         public frmEditor()
         {
             InitializeComponent();
@@ -25,13 +26,15 @@ namespace Calculadora.Formulario
 
         private void abrirToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (ofpEditor.ShowDialog() == DialogResult.OK) {
-                if (File.Exists(ofpEditor.FileName)) { // si la ruta seleccionada existe
+            if (ofpEditor.ShowDialog() == DialogResult.OK)
+            {
+                if (File.Exists(ofpEditor.FileName))
+                { // si la ruta seleccionada existe
                     rtbEditor.Text = File.ReadAllText(ofpEditor.FileName);
 
 
-                    
-                } 
+
+                }
             }
         }
 
@@ -42,16 +45,18 @@ namespace Calculadora.Formulario
                 guardar();
                 saved = true;
             }
-            else {
+            else
+            {
                 using (StreamWriter archivo = new StreamWriter(path)) // la ruta del archivo que voy a guardar
                     archivo.Write(rtbEditor.Text);
             }
 
         }
-        private void guardar() {
+        private void guardar()
+        {
             if (sfdEditor.ShowDialog() == DialogResult.OK)
             {
-               path=sfdEditor.FileName;
+                path = sfdEditor.FileName;
                 using (StreamWriter archivo = new StreamWriter(path)) // la ruta del archivo que voy a guardar
                 { archivo.Write(rtbEditor.Text); }// le voy a mandar al archuvo lo que tengo escrito en el rtb
             }
@@ -65,7 +70,24 @@ namespace Calculadora.Formulario
         {
             rtbEditor.Clear();
             path = "";//ruta
-            saved= false;
+            saved = false;
+        }
+
+        private void rtbEditor_TextChanged(object sender, EventArgs e)
+        {
+             texto = rtbEditor.Text;
+            string[] palabras = texto.Split(new char[] { ' ', '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries);
+            
+           
+            tssStatus.Text = palabras.Length.ToString() + " Palabras";
+        }
+
+        private void tssStatus_Click(object sender, EventArgs e)
+        {
+             texto = rtbEditor.Text;
+            string[] palabras = texto.Split(new char[] { ' ', '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries);
+            string[] parrafos = texto.Split(new char[] {  '\n' }, StringSplitOptions.RemoveEmptyEntries);
+            MessageBox.Show("Estadisticas : \n\nPalabras: " + palabras.Length.ToString ()+ "\nLetras: " + texto.Length.ToString() + "\nParrafos: " + parrafos.Length.ToString(), "Contador de Palabras");
         }
     }
 }
